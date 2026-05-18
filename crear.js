@@ -14,7 +14,17 @@ const alumno = {
     edad: 28
 } 
 
-// Una vez creamos el alumno ---> esto después se lo hace desde una VISTA
+//Buscamos si ya existe
+
+const alumnoExistente = alumnos.find( a =>
+    a.id === alumno.id
+);
+
+if(alumnoExistente){
+    console.log("El alumno ya existe")
+}else{
+
+    // Una vez creamos el alumno ---> esto después se lo hace desde una VISTA
 // lo agregamos al array de alumnos
 
 alumnos.push(alumno);
@@ -24,3 +34,7 @@ alumnos.push(alumno);
 fs.writeFileSync ( path, JSON.stringify(alumnos, null, 2));
 
 console.log("Alumno añadido exitosamente");
+
+
+}
+
